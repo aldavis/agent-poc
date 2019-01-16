@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Awesome Life Insurance",
+      "description": "the insurance is awesome",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Kind Cool Life Insurance",
+      "description": "the insurance is not to bad",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Cheap Life Insurance",
+      "description": "the insurance is budget friendly",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Expensive Life Insurance",
+      "description": "nobody can afford this stuff",
+      "active": false
+    },
+    {
+      "id": 5,
+      "name": "Really Bad Life Insurance",
+      "description": "who would want to buy it",
+      "active": false
+    }
+  ],
+  "policies": [
+    {
+      "id": 1,
+      "policyHolderName": "Steve Rogers",
+      "productType": "Awesome Life Insurance",
+      "annualPremium": 2500.52,
+      "adminSystem": "Old",
+      "lineOfBusiness": "Term"
+    },
+    {
+      "id": 2,
+      "policyHolderName": "Steve Rogers",
+      "productType": "Kind of Cool Life Insurance",
+      "annualPremium": 3500.52,
+      "adminSystem": "Old",
+      "lineOfBusiness": "Whole"
+    },
+    {
+      "id": 3,
+      "policyHolderName": "Tony Stark",
+      "productType": "Awesome Life Insurance",
+      "annualPremium": 2500.52,
+      "adminSystem": "Old",
+      "lineOfBusiness": "Term"
+    },
+    {
+      "id": 5,
+      "policyHolderName": "Bruce Wayne",
+      "productType": "Awesome Life Insurance",
+      "annualPremium": 100005428.52,
+      "adminSystem": "Old",
+      "lineOfBusiness": "Term"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Tony Stark",
+      "address": "Los Angeles",
+      "birthDate": "01/01/2001"
+    },
+    {
+      "id": 2,
+      "name": "Steve Rogers",
+      "address": "Brooklyn",
+      "birthDate": "01/01/2001"
+    },
+    {
+      "id": 3,
+      "name": "Bruce Wayne",
+      "address": "Gotham",
+      "birthDate": "01/01/2001"
+    }
+  ]
+}
