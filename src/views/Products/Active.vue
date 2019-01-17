@@ -4,12 +4,10 @@
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex v-for="category in categories" :key="category.name">
-            <v-card light hover class="categoryCard">
+            <v-card hover class="categoryCard">
               <v-card-title>{{category.name}}</v-card-title>
               <v-flex v-for="product in category.products" :key="product.name">
-                <v-card flat dark>
-                  <v-card-text>{{product.name}}</v-card-text>
-                </v-card>
+                <v-btn flat small color="primary">{{product.name}}</v-btn>
               </v-flex>
             </v-card>
           </v-flex>
@@ -27,38 +25,38 @@ export default {
     return {
       categories: [
         {
-          name: "Category one",
+          name: "Universal Life",
           products: [
             {
-              name: "Product One"
+              name: "FlexLife UL"
             },
             {
-              name: "Product Two"
+              name: "Platinum UL"
             }
           ]
         },
         {
-          name: "Category Two",
+          name: "Term",
           products: [
             {
-              name: "Product One"
+              name: "Secure Term ART"
             },
             {
-              name: "Product Two"
+              name: "Secure Term 10"
             },
             {
-              name: "Product Three"
+              name: "Secure Term 20"
             },
             {
-              name: "Product Four"
+              name: "Secure Term 30"
             }
           ]
         },
         {
-          name: "Category Three",
+          name: "Whole Life",
           products: [
             {
-              name: "Product One"
+              name: "Summit Whole Life"
             }
           ]
         }

@@ -1,10 +1,8 @@
 <template>
-    <div><h1>Case Manager</h1></div>
+  <div>
+    <h1>Case Manager</h1>
+  </div>
 </template>
-<script>
-export default {
-  name: "CaseList"
-};
-</script>
+
 <style>
 </style>
