@@ -99,6 +99,7 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+      <v-calendar class="calendar"></v-calendar>
     </v-navigation-drawer>
     <v-toolbar class="topToolbar" fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -123,5 +124,10 @@ export default {
 <style>
 .topToolbar {
   background-image: linear-gradient(to bottom right, #e21e1e, #b81414);
+}
+.calendar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 </style>
