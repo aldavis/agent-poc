@@ -21,8 +21,6 @@ export default {
 };
 </script>
 
-<style>
-#mainContainer {
-  border: solid gray 3px;
-}
+<style lang="scss">
+@import "@/styles/index.scss";
 </style>

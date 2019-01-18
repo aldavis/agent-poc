@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Agent Dashboard</h1>
+    <h1 class="text-gray">Agent Dashboard</h1>
   </div>
 </template>
 
@@ -9,3 +9,9 @@ export default {
   components: {}
 };
 </script>
+<style lang="scss">
+$color: red;
+.text-gray {
+  color: $color !important;
+}
+</style>
