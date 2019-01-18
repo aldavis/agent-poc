@@ -103,7 +103,7 @@
     </v-navigation-drawer>
     <v-toolbar class="topToolbar" fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Agent Poc</v-toolbar-title>
+      <v-toolbar-title>LifeNet vNext</v-toolbar-title>
     </v-toolbar>
   </div>
 </template>

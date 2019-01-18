@@ -8,9 +8,9 @@
     <v-layout row justify-center>
       <v-flex xs6>
         <v-text-field
+          class="search-input"
           label="Policy #"
           single-line
-          outline
           v-model="policySearchInput"
           @keyup.enter="findPolicy"
         ></v-text-field>
