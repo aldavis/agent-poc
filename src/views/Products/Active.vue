@@ -4,7 +4,7 @@
       <card
         v-for="category in categories"
         :key="category.name"
-        color="red"
+        color="grey"
         fullWidth:true
         v-bind:title="category.name"
       >

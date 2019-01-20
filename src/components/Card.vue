@@ -1,6 +1,6 @@
 <template>
   <v-card v-bind="$attrs" :style="styles" v-on="$listeners">
-    <helper-offset v-if="hasOffset" :inline="inline" :full-width="fullWidth" :offset="offset">
+    <offset v-if="hasOffset" :inline="inline" :full-width="fullWidth" :offset="offset">
       <v-card
         v-if="!$slots.offset"
         :color="color"
@@ -15,7 +15,7 @@
         </span>
       </v-card>
       <slot v-else name="offset"/>
-    </helper-offset>
+    </offset>
 
     <v-card-text>
       <slot/>
@@ -30,9 +30,10 @@
 </template>
 
 <script>
+import Offset from "@/components/Offset";
 export default {
   inheritAttrs: false,
-
+  components: { Offset },
   props: {
     color: {
       type: String,
