@@ -3,7 +3,7 @@
     <v-layout wrap>
       <v-flex sm12 md12 lg6>
         <card
-          color="red"
+          color="#333333"
           title="Recently Submitted Applications"
           text="Applications submitted in the past 14 days"
         >
@@ -25,7 +25,7 @@
         </card>
       </v-flex>
       <v-flex sm12 md12 lg6>
-        <card color="red" title="Recently Viewed Cases" text="Cases view in the past 7 days">
+        <card color="#333333" title="Recently Viewed Cases" text="Cases view in the past 7 days">
           <v-data-table :headers="viewedCases.columns" :items="viewedCases.items" hide-actions>
             <template slot="headerCell" slot-scope="{ header }">
               <span class="font-weight-light text-warning text--darken-3" v-text="header.text"/>

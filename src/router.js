@@ -16,7 +16,7 @@ Vue.use(Router);
 var mainRoutes = [
   {
     path: "/",
-    name: "dashboard",
+    name: "My Dashboard",
     component: Dashboard
   }
 ];

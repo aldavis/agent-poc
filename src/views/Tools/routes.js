@@ -3,7 +3,7 @@ import Index from "@/views/Tools/Index.vue";
 const routes = [
   {
     path: "/tools",
-    name: "toolsMenu",
+    name: "Tools",
     component: Index
   }
 ];

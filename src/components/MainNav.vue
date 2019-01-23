@@ -18,7 +18,7 @@
             <v-list-tile-title>Current Products</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{path: '/policies/search'}">
+        <v-list-tile :to="{name: 'Search Policies'}">
           <v-list-tile-action>
             <v-icon>fas fa-money-check-alt</v-icon>
           </v-list-tile-action>
@@ -26,7 +26,7 @@
             <v-list-tile-title>Inforce Policies</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{path: '/products/archived'}">
+        <v-list-tile :to="{name: 'Archived Products'}">
           <v-list-tile-action>
             <v-icon>fas fa-file-archive</v-icon>
           </v-list-tile-action>
@@ -34,7 +34,7 @@
             <v-list-tile-title>Retired Products</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{path: '/tools'}">
+        <v-list-tile :to="{name: 'Tools'}">
           <v-list-tile-action>
             <v-icon>fas fa-wrench</v-icon>
           </v-list-tile-action>
@@ -42,7 +42,7 @@
             <v-list-tile-title>Tools</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{name: 'cases'}">
+        <v-list-tile :to="{name: 'Case Manager'}">
           <v-list-tile-action>
             <v-icon>fas fa-briefcase</v-icon>
           </v-list-tile-action>
@@ -50,7 +50,7 @@
             <v-list-tile-title>Case Manager</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{name: 'clients'}">
+        <v-list-tile :to="{name: 'Clients'}">
           <v-list-tile-action>
             <v-icon>fas fa-users</v-icon>
           </v-list-tile-action>
@@ -58,7 +58,7 @@
             <v-list-tile-title>Clients</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{name: 'pendingPolicies'}">
+        <v-list-tile :to="{name: 'Pending Policies'}">
           <v-list-tile-action>
             <v-icon>fas fa-business-time</v-icon>
           </v-list-tile-action>
@@ -66,7 +66,7 @@
             <v-list-tile-title>Pending</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{name: 'prospects'}">
+        <v-list-tile :to="{name: 'Prospects'}">
           <v-list-tile-action>
             <v-icon>fas fa-address-card</v-icon>
           </v-list-tile-action>
@@ -74,7 +74,7 @@
             <v-list-tile-title>Prospects</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{name: 'links'}">
+        <v-list-tile :to="{name: 'Links'}">
           <v-list-tile-action>
             <v-icon>fas fa-link</v-icon>
           </v-list-tile-action>
@@ -101,9 +101,9 @@
       </v-list>
       <v-calendar class="calendar"></v-calendar>
     </v-navigation-drawer>
-    <v-toolbar class="topToolbar" fixed app>
+    <v-toolbar flat prominent app style="background: #eee;">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>LifeNet vNext</v-toolbar-title>
+      <v-toolbar-title>{{title}}</v-toolbar-title>
     </v-toolbar>
   </div>
 </template>
@@ -112,9 +112,15 @@
 export default {
   name: "MainNav",
   data: () => ({
-    drawer: null
+    drawer: null,
+    title: null
   }),
 
+  watch: {
+    $route(val) {
+      this.title = val.name;
+    }
+  },
   props: {
     source: String
   }
@@ -122,9 +128,6 @@ export default {
 </script>
 
 <style>
-.topToolbar {
-  background-image: linear-gradient(to bottom right, #e21e1e, #b81414);
-}
 .calendar {
   position: fixed;
   bottom: 0;

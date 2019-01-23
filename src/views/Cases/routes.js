@@ -3,7 +3,7 @@ import List from "@/views/Cases/List.vue";
 const routes = [
   {
     path: "/cases",
-    name: "cases",
+    name: "Case Manager",
     component: List
   }
 ];

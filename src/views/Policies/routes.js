@@ -5,17 +5,17 @@ import Search from "@/views/Policies/Search.vue";
 const routes = [
   {
     path: "/policies/search",
-    name: "searchPolicies",
+    name: "Search Policies",
     component: Search
   },
   {
     path: "/policies/details",
-    name: "policyDetails",
+    name: "Policy Details",
     component: Details
   },
   {
     path: "/policies/pending",
-    name: "pendingPolicies",
+    name: "Pending Policies",
     component: Pending
   }
 ];

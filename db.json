@@ -34,18 +34,27 @@
   "policies": [
     {
       "id": 1,
-      "policyHolderName": "Steve Rogers",
+      "policyHolderFirstName": "Steve",
+      "policyHolderLastName": "Rogers",
       "productType": "Awesome Life Insurance",
       "annualPremium": 2500.52,
-      "adminSystem": "Old",
-      "lineOfBusiness": "Term"
+      "adminSystem": "LifeComm",
+      "lineOfBusiness": "Term",
+      "suspendCodes": "A,B,C",
+      "status": "Pending",
+      "coverage": {
+        "status": "Pending",
+        "amount": "$250,000",
+        "productType": "Awesome Life Insurance",
+        "annual": "$288.50"
+      }
     },
     {
       "id": 2,
       "policyHolderName": "Steve Rogers",
       "productType": "Kind of Cool Life Insurance",
       "annualPremium": 3500.52,
-      "adminSystem": "Old",
+      "adminSystem": "LifeComm",
       "lineOfBusiness": "Whole"
     },
     {

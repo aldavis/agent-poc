@@ -4,12 +4,12 @@ import ArchivedProducts from "@/views/Products/Archived.vue";
 const routes = [
   {
     path: "/products/active",
-    name: "activeProducts",
+    name: "Active Products",
     component: ActiveProducts
   },
   {
     path: "/products/archived",
-    name: "archivedProducts",
+    name: "Archived Products",
     component: ArchivedProducts
   }
 ];
