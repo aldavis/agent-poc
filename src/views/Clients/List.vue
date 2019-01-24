@@ -1,37 +1,37 @@
 <template>
-        <v-data-table
-      v-model="selected"
-      :headers="headers"
-      :items="clients"
-      :pagination.sync="pagination"
-      select-all
-      item-key="name"
-      class="elevation-1"
-    >
-      <template slot="headers" slot-scope="props">
-        <tr>
-          <th
-            v-for="header in props.headers"
-            :key="header.text"
-            :class="['column sortable', pagination.descending ? 'desc' : 'asc', header.value === pagination.sortBy ? 'active' : '']"
-            @click="changeSort(header.value)"
-          >
-            <v-icon small>arrow_upward</v-icon>
-            {{ header.text }}
-          </th>
-        </tr>
-      </template>
-      <template slot="items" slot-scope="props">
-        <tr :active="props.selected" @click="props.selected = !props.selected">
-          <td>{{ props.item.firstname }}</td>
-          <td class="text-xs-right">{{ props.item.lastname }}</td>
-          <td class="text-xs-right">{{ props.item.policyNum }}</td>
-          <td class="text-xs-right">{{ props.item.product }}</td>
-          <td class="text-xs-right">{{ props.item.plan }}</td>
-          <td class="text-xs-right">{{ props.item.issueDate }}</td>
-        </tr>
-      </template>
-    </v-data-table>
+  <v-data-table
+    v-model="selected"
+    :headers="headers"
+    :items="clients"
+    :pagination.sync="pagination"
+    select-all
+    item-key="name"
+    class="elevation-1"
+  >
+    <template slot="headers" slot-scope="props">
+      <tr>
+        <th
+          v-for="header in props.headers"
+          :key="header.text"
+          :class="['column sortable', pagination.descending ? 'desc' : 'asc', header.value === pagination.sortBy ? 'active' : '']"
+          @click="changeSort(header.value)"
+        >
+          <v-icon small>arrow_upward</v-icon>
+          {{ header.text }}
+        </th>
+      </tr>
+    </template>
+    <template slot="items" slot-scope="props">
+      <tr :active="props.selected" @click="props.selected = !props.selected">
+        <td>{{ props.item.firstname }}</td>
+        <td class="text-xs-right">{{ props.item.lastname }}</td>
+        <td class="text-xs-right">{{ props.item.policyNum }}</td>
+        <td class="text-xs-right">{{ props.item.product }}</td>
+        <td class="text-xs-right">{{ props.item.plan }}</td>
+        <td class="text-xs-right">{{ props.item.issueDate }}</td>
+      </tr>
+    </template>
+  </v-data-table>
 </template>
 <script>
 export default {
