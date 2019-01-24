@@ -160,30 +160,31 @@
         </v-flex>
       </v-flex>
       <v-flex xs12 md8 lg2>
-        <div>Actions</div>
-        <v-flex>
-          <v-btn large color="success" class="font-weight-light">Crt</v-btn>
-        </v-flex>
-        <v-btn large color="success" class="font-weight-light">Decrease</v-btn>
-        <div>
-          <v-btn large color="success" class="font-weight-light">Cancel</v-btn>
-        </div>
-        <div>
-          <v-btn large color="success" class="font-weight-light">Plan Change</v-btn>
-        </div>
-        <div>
-          <v-btn color="success" class="font-weight-light">Add Waiver</v-btn>
-        </div>
-        <div>
-          <v-btn color="success" class="font-weight-light">Add Rider</v-btn>
-        </div>
-        <div>
-          <v-btn color="success" class="font-weight-light">Add Additional Insured</v-btn>
-        </div>
+        <card color="#333333" title="Available Actions">
+          <v-flex>
+            <v-btn large round color="success" class="font-weight-light">Crt</v-btn>
+          </v-flex>
+          <v-btn large round color="success" class="font-weight-light">Decrease</v-btn>
+          <div>
+            <v-btn large color="success" class="font-weight-light">Cancel</v-btn>
+          </div>
+          <div>
+            <v-btn large color="success" class="font-weight-light">Plan Change</v-btn>
+          </div>
+          <div>
+            <v-btn color="success" class="font-weight-light">Add Waiver</v-btn>
+          </div>
+          <div>
+            <v-btn color="success" class="font-weight-light">Add Rider</v-btn>
+          </div>
+          <div>
+            <v-btn color="success" class="font-weight-light">Add Additional Insured</v-btn>
+          </div>
 
-        <div>
-          <v-btn color="success" class="font-weight-light">Special Request</v-btn>
-        </div>
+          <div>
+            <v-btn color="success" class="font-weight-light">Special Request</v-btn>
+          </div>
+        </card>
       </v-flex>
     </v-layout>
   </v-container>

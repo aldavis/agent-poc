@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>Case Manager</h1>
-  </div>
+  <v-container fill-height fluid grid-list-xl>
+    <v-layout wrap></v-layout>
+  </v-container>
 </template>
 
 <style>
