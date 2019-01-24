@@ -4,11 +4,28 @@
       <card
         v-for="category in categories"
         :key="category.name"
-        color="grey"
+        color="blue"
         fullWidth:true
         v-bind:title="category.name"
       >
-        <v-flex hover v-for="product in category.products" :key="product.name">
+        <v-expansion-panel focusable>
+          <v-expansion-panel-content v-for="product in category.products" :key="product.name">
+            <div slot="header">{{product.name}}</div>
+            <v-card>
+              <v-container fill-height>
+                <v-layout align-center justify-center>
+                  <v-flex xs12 lg10>
+                    <v-card-text>{{product.description}}</v-card-text>
+                  </v-flex>
+                  <v-flex xs12 lg2 align-center>
+                    <v-btn color="green">Start Application</v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <!-- <v-flex hover v-for="product in category.products" :key="product.name">
           <v-btn flat color="primary" @click="showProduct(category,product)">
             <h4>{{product.name}}</h4>
           </v-btn>
@@ -16,20 +33,19 @@
             {{product.description}}
             <v-btn color="green">Start Application</v-btn>
           </div>
-        </v-flex>
+        </v-flex>-->
       </card>
-      <!-- <v-container fluid grid-list-md>
-        <v-layout row wrap>
-          <v-flex v-for="category in categories" :key="category.name">
-            <v-card hover class="categoryCard">
-              <v-card-title>{{category.name}}</v-card-title>
-              <v-flex v-for="product in category.products" :key="product.name">
-                <v-btn flat small color="primary">{{product.name}}</v-btn>
-              </v-flex>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>-->
+      <!-- <v-expansion-panel focusable>
+        <v-expansion-panel-content v-for="category in categories"
+        :key="category.name">
+          <div slot="header">Item</div>
+          <v-card>
+            <v-card-text
+              class="grey lighten-3"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>-->
     </v-flex>
   </v-layout>
 </template>
