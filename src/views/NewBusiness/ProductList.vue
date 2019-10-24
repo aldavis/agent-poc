@@ -13,12 +13,13 @@
             <div slot="header">{{product.name}}</div>
             <v-card>
               <v-container fill-height>
-                <v-layout align-center justify-center>
-                  <v-flex xs12 lg10>
+                <v-layout wrap align-center justify-center>
+                  <v-flex xs12 lg12>
                     <v-card-text>{{product.description}}</v-card-text>
                   </v-flex>
-                  <v-flex xs12 lg2 align-center>
-                    <v-btn color="green">Start Application</v-btn>
+                  <v-flex xs12 lg12 align-center>
+                    <v-btn color="blue" :to="{name: 'Illustration'}">Illustrate Product</v-btn>
+                    <v-btn color="blue" :to="{name: 'Application'}">Start Application</v-btn>
                   </v-flex>
                 </v-layout>
               </v-container>

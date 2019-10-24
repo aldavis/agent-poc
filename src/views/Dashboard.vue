@@ -1,6 +1,28 @@
 <template>
   <v-container>
     <v-layout wrap>
+      <v-flex sm12 md12 lg12>
+        <card
+          color="#333333"
+          title="My Pending Items"
+          text="Items needing action related to new applications, claims, or policy changes."
+        >
+          <v-data-table :headers="pendingItems.columns" :items="pendingItems.items" hide-actions>
+            <template slot="headerCell" slot-scope="{ header }">
+              <span class="font-weight-light text-warning text--darken-3" v-text="header.text" />
+            </template>
+            <template slot="items" slot-scope="{ index, item }">
+              <td>{{ item.name }}</td>
+              <td class="text-xs-right">{{ item.category }}</td>
+              <td class="text-xs-right">{{ item.customerName }}</td>
+              <td class="text-xs-right">{{ item.policyNumber }}</td>
+              <td class="text-xs-right">{{ item.requestedBy }}</td>
+              <td class="text-xs-right">{{ item.requestedDate }}</td>
+              <td class="text-xs-right">{{ item.dueDate }}</td>
+            </template>
+          </v-data-table>
+        </card>
+      </v-flex>
       <v-flex sm12 md12 lg6>
         <card
           color="#333333"
@@ -13,7 +35,7 @@
             hide-actions
           >
             <template slot="headerCell" slot-scope="{ header }">
-              <span class="font-weight-light text-warning text--darken-3" v-text="header.text"/>
+              <span class="font-weight-light text-warning text--darken-3" v-text="header.text" />
             </template>
             <template slot="items" slot-scope="{ index, item }">
               <td>{{ item.name }}</td>
@@ -25,15 +47,20 @@
         </card>
       </v-flex>
       <v-flex sm12 md12 lg6>
-        <card color="#333333" title="Recently Viewed Cases" text="Cases view in the past 7 days">
+        <card
+          color="#333333"
+          title="Recently Submitted Changes"
+          text="Changes submitted in the past 7 days"
+        >
           <v-data-table :headers="viewedCases.columns" :items="viewedCases.items" hide-actions>
             <template slot="headerCell" slot-scope="{ header }">
-              <span class="font-weight-light text-warning text--darken-3" v-text="header.text"/>
+              <span class="font-weight-light text-warning text--darken-3" v-text="header.text" />
             </template>
             <template slot="items" slot-scope="{ index, item }">
               <td>{{ item.name }}</td>
               <td class="text-xs-right">{{ item.type }}</td>
               <td class="text-xs-right">{{ item.policyNumber }}</td>
+              <td class="text-xs-right">{{ item.changeType }}</td>
             </template>
           </v-data-table>
         </card>
@@ -226,18 +253,91 @@ export default {
             text: "Policy #",
             value: "policyNumber",
             align: "right"
+          },
+          {
+            sortable: true,
+            text: "Change Type",
+            value: "changeType",
+            align: "right"
           }
         ],
         items: [
           {
             name: "Barry Allen",
             type: "Term 30",
-            policyNumber: "TR985632"
+            policyNumber: "TR985632",
+            changeType: "Rider Addition"
           },
           {
             name: "Harvey Dent",
             type: "Secure 20",
-            policyNumber: "TR125487"
+            policyNumber: "TR125487",
+            changeType: "Additional Insured Added"
+          }
+        ]
+      },
+      pendingItems: {
+        columns: [
+          {
+            sortable: true,
+            text: "Name",
+            value: "name"
+          },
+          {
+            sortable: true,
+            text: "Category",
+            value: "category",
+            align: "right"
+          },
+          {
+            sortable: true,
+            text: "Customer Name",
+            value: "customerName",
+            align: "right"
+          },
+          {
+            sortable: true,
+            text: "Policy Number",
+            value: "policyNumber",
+            align: "right"
+          },
+          {
+            sortable: true,
+            text: "Requested By",
+            value: "requestedBy",
+            align: "right"
+          },
+          {
+            sortable: true,
+            text: "Requested Date",
+            value: "requestedDate",
+            align: "right"
+          },
+          {
+            sortable: true,
+            text: "Due Date",
+            value: "dueDate",
+            align: "right"
+          }
+        ],
+        items: [
+          {
+            name: "Missing Signature",
+            category: "Policy Change",
+            customerName: "Barry Allen",
+            policyNumber: "TR985632",
+            requestedBy: "Bruce Wayne",
+            requestedDate: "01/01/2019",
+            dueDate: "01/15/2019"
+          },
+          {
+            name: "Death Certificate",
+            category: "Claim",
+            customerName: "Bucky Barnes",
+            policyNumber: "TR78787",
+            requestedBy: "Tony Stark",
+            requestedDate: "11/01/2019",
+            dueDate: "11/15/2019"
           }
         ]
       }
