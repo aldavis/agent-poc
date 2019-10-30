@@ -2,8 +2,8 @@
   <v-container>
     <v-layout>
       <v-flex md9>
-        <v-stepper v-model="applicationStepper" vertical>
-          <v-stepper-step :complete="applicationStepper > 1" step="1">
+        <v-stepper v-model="applicationStepper" vertical non-linear>
+          <v-stepper-step :complete="applicationStepper > 1" step="1" editable>
             Applicant Information
             <small>Summarize if needed</small>
           </v-stepper-step>
@@ -81,7 +81,8 @@
               </v-layout>
             </v-card>
           </v-stepper-content>
-          <v-stepper-step :complete="applicationStepper > 2" step="2">Policy Information</v-stepper-step>
+
+          <v-stepper-step :complete="applicationStepper > 2" step="2" editable>Policy Information</v-stepper-step>
           <v-stepper-content step="2">
             <v-card>
               <v-layout>
@@ -99,8 +100,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 3" step="3">Payment Information</v-stepper-step>
-
+          <v-stepper-step :complete="applicationStepper > 3" step="3" editable>Payment Information</v-stepper-step>
           <v-stepper-content step="3">
             <v-card>
               <v-layout>
@@ -121,7 +121,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 4" step="4">Existing Insurance(s)</v-stepper-step>
+          <v-stepper-step :complete="applicationStepper > 4" step="4" editable>Existing Insurance(s)</v-stepper-step>
           <v-stepper-content step="4">
             <v-card>
               <div>List All Existing Insurances</div>
@@ -143,7 +143,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 5" step="5">Medical Questionairre</v-stepper-step>
+          <v-stepper-step :complete="applicationStepper > 5" step="5" editable>Medical Questionairre</v-stepper-step>
           <v-stepper-content step="5">
             <v-card>
               <v-layout row>
@@ -180,7 +180,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 6" step="6">Agent Questionairre</v-stepper-step>
+          <v-stepper-step :complete="applicationStepper > 6" step="6" editable>Agent Questionairre</v-stepper-step>
           <v-stepper-content step="6">
             <v-card>
               <v-layout row></v-layout>
@@ -191,7 +191,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 7" step="7">Review Documents</v-stepper-step>
+          <v-stepper-step :complete="applicationStepper > 7" step="7" editable>Review Documents</v-stepper-step>
           <v-stepper-content step="7">
             <v-card>
               <v-layout row></v-layout>
@@ -202,7 +202,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 8" step="8">Customer Signatures</v-stepper-step>
+          <v-stepper-step :complete="applicationStepper > 8" step="8" editable>Customer Signatures</v-stepper-step>
           <v-stepper-content step="8">
             <v-card>
               <v-layout row></v-layout>
@@ -213,7 +213,7 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 9" step="9">Agent Signatures</v-stepper-step>
+          <v-stepper-step :complete="applicationStepper > 9" step="9" editable>Agent Signatures</v-stepper-step>
           <v-stepper-content step="9">
             <v-card>
               <v-layout row></v-layout>
@@ -224,7 +224,11 @@
             </v-card>
           </v-stepper-content>
 
-          <v-stepper-step :complete="applicationStepper > 10" step="10">Submit for Processing</v-stepper-step>
+          <v-stepper-step
+            :complete="applicationStepper > 10"
+            step="10"
+            editable
+          >Submit for Processing</v-stepper-step>
           <v-stepper-content step="10">
             <v-card>
               <v-layout row></v-layout>
@@ -237,16 +241,16 @@
         </v-stepper>
       </v-flex>
       <v-flex md3>
-        <v-card raised>Application Summary</v-card>
+        <application-summary></application-summary>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-//import Card from "@/components/Card";
+import ApplicationSummary from "@/views/NewBusiness/ExpressApp/ApplicationSummary";
 export default {
-  // components: { Card },
+  components: { ApplicationSummary },
   data() {
     return {
       applicantIsOwner: true,
