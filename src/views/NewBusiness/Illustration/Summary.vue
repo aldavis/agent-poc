@@ -1,8 +1,8 @@
 <template>
-  <v-card raised :elevation="20">
+  <v-container>
     <v-layout>
       <v-flex>
-        <h3>Application Summary for {Applicant Name}</h3>
+        <h3>Illustration Summary</h3>
       </v-flex>
     </v-layout>
     <v-layout>
@@ -17,7 +17,7 @@
     <v-layout>
       <v-flex>Monthly Payment</v-flex>
     </v-layout>
-  </v-card>
+  </v-container>
 </template>
 <script>
 export default {

@@ -1,6 +1,6 @@
 import ProductList from "@/views/NewBusiness/ProductList.vue";
 import Application from "@/views/NewBusiness/ExpressApp/Application.vue";
-import Illustration from "@/views/NewBusiness/Illustration.vue";
+import Illustration from "@/views/NewBusiness/Illustration/Illustration.vue";
 
 const routes = [
   {
