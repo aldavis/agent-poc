@@ -1,22 +1,22 @@
 <template>
   <v-container>
-    <v-layout>
-      <v-flex md9>
+    <v-layout row wrap>
+      <v-flex xs12 md12 lg9>
         <v-card height="500px">
           <policy-info></policy-info>
           <v-card-actions>
-            <v-btn color="green" left>Start Application</v-btn>
+            <v-btn color="green" left>Calcualte</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
-      <v-flex md3>
+      <v-flex xs12 md12 lg3>
         <v-card height="500px">
           <illustration-summary></illustration-summary>
         </v-card>
       </v-flex>
     </v-layout>
-    <v-layout>
-      <v-flex>
+    <v-layout row wrap>
+      <v-flex xs12 md12 lg12>
         <v-card>
           <ledger></ledger>
         </v-card>
